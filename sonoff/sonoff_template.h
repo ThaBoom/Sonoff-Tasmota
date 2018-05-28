@@ -191,6 +191,7 @@ enum SupportedModules {
   SONOFF_S31,
   ZENGGE_ZF_WF017,
   SONOFF_POW_R2,
+  KYGNE_Smart,
   MAXMODULE };
 
 /********************************************************************************************/
@@ -251,7 +252,8 @@ const uint8_t kNiceList[MAXMODULE] PROGMEM = {
   KMC_70011,
   AILIGHT,
   WEMOS,
-  WITTY
+  WITTY,
+  KYGNE_Smart
 };
 
 // Default module settings
@@ -826,6 +828,21 @@ const mytmplt kModules[MAXMODULE] PROGMEM = {
      GPIO_REL1,        // GPIO12 Red Led and Relay (0 = Off, 1 = On)
      GPIO_LED1_INV,    // GPIO13 Blue Led (0 = On, 1 = Off)
      0, 0, 0, 0
+  },
+  { "KYGNE Smart",    // KYGNE Smart Light Switch
+     GPIO_USER,                // https://www.amazon.com/gp/product/B078M4WHPP/
+     GPIO_USER,                // Board marked SDS-170818E  
+     GPIO_USER,                // ESP Module is Tuya TYWE2S https://docs.tuya.com/en/hardware/WiFi-module/wifi-e3s-module.html
+     GPIO_USER,        
+     GPIO_LED2,        // GPIO04 Wifi logo LED
+     GPIO_LED1_INV,    // GPIO05 Lightbulb LED
+     0, 0, 0, 0, 0, 0, // Flash connection
+     GPIO_REL1,        // GPIO12 Relay
+     GPIO_KEY1,        // GPIO13 Touch Switch
+     GPIO_USER,        // GPIO14 D5
+     GPIO_USER,        // GPIO15 D8
+     GPIO_USER,        // GPIO16 D0 
+     GPIO_ADC0         // ADC0   A0 Analog input
   }
 };
 
